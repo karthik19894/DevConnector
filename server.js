@@ -1,8 +1,12 @@
 const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
+const bodyParser=require('body-parser');
 
 const port=process.env.PORT || 3100;
+
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 const users=require('./routes/api/users');
 const profile=require('./routes/api/profile');
@@ -17,6 +21,7 @@ mongoose.connect(db)
 .catch(err=>console.log(err));
 
 //Middleware
+
 
 app.use('/api/users',users);
 app.use('/api/profile',profile);
