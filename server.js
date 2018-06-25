@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
+const passport=require('passport');
 
 const port=process.env.PORT || 3100;
 
@@ -20,7 +21,14 @@ mongoose.connect(db)
 .then(()=>console.log('Connected to Database'))
 .catch(err=>console.log(err));
 
-//Middleware
+//Passport Middleware
+app.use(passport.initialize());
+
+//Passport Config
+require('./config/passport')(passport);
+
+
+//Routes Middleware
 
 
 app.use('/api/users',users);
