@@ -4,7 +4,7 @@ const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 const passport=require('passport');
 
-const port=process.env.PORT || 3100;
+const port=process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -39,7 +39,7 @@ app.use('/api/posts',posts);
 
 
 app.get('/',(req,res)=>{
-    res.send('Hello');
+    res.send('Welcome to DevConnector Backend API');
 });
 
 app.listen(port,(req,res)=>{
