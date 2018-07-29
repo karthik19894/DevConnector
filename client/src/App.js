@@ -15,6 +15,8 @@ import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import PrivateRoute from './components/common/PrivateRoute';
+import AddExperience from './components/add-credentials/AddExperience';
+import AddEducation from './components/add-credentials/AddEducation';
 
 //Check for token
 
@@ -53,6 +55,12 @@ class App extends Component {
 							</Switch>
 							<Switch>
 								<PrivateRoute exact path="/create-profile" component={CreateProfile} />
+							</Switch>
+							<Switch>
+								<PrivateRoute exact path="/add-experience" component={AddExperience} />
+							</Switch>
+							<Switch>
+								<PrivateRoute exact path="/add-education" component={AddEducation} />
 							</Switch>
 						</div>
 						<Footer />
