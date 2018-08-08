@@ -17,7 +17,7 @@ const store = createStore(
 	initialState,
 	compose(
 		applyMiddleware(...middleware),
-		devTools
+		devTools !== null ? devTools : ''
 	)
 );
 
